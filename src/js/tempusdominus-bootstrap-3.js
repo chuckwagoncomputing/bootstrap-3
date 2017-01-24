@@ -1014,24 +1014,23 @@ const TempusDominusBootstrap3 = ($ => { // eslint-disable-line no-unused-vars
 
         //static
         static _jQueryInterface(option, argument) {
-            return this.each(function () {
-                let data = $(this).data(DateTimePicker.DATA_KEY);
-                if (typeof option === 'object') {
-                    $.extend({}, DateTimePicker.Default, option);
-                }
+            var div = $(this)[0]
+            var data = $(div).data(DateTimePicker.DATA_KEY);
+            if ((typeof option === "undefined" ? "undefined" : _typeof(option)) === 'object') {
+                $.extend({}, DateTimePicker.Default, option);
+            }
 
-                if (!data) {
-                    data = new TempusDominusBootstrap3($(this), option);
-                    $(this).data(DateTimePicker.DATA_KEY, data);
-                }
+            if (!data) {
+                data = new TempusDominusBootstrap3($(div), option);
+                $(div).data(DateTimePicker.DATA_KEY, data);
+            }
 
-                if (typeof option === 'string') {
-                    if (data[option] === undefined) {
-                        throw new Error(`No method named "${option}"`);
-                    }
-                    data[option](argument);
+            if (typeof option === 'string') {
+                if (data[option] === undefined) {
+                   throw new Error("No method named \"" + option + "\"");
                 }
-            });
+                return data[option](argument);
+            }
         }
     }
 
