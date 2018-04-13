@@ -1,3 +1,5 @@
+# This repository contains some (poor, hacky) bug fixes I needed at the time. Don't use it.
+
 # Tempus Dominus Bootstrap 3
 ![GitHub version](https://badge.fury.io/gh/tempusdominus%2Fbootstrap-3-datetimepicker.png)
 
